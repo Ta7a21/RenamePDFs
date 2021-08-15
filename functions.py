@@ -20,9 +20,15 @@ def browseFolders(self, label):
         label.setText(folderPath)
     return
 
-def extractExcel(path):
+def extractExcel(self,path):
     files = {}
-    workbook = xlrd.open_workbook(path)
+    try:
+        workbook = xlrd.open_workbook(path)
+    except:
+        errorMssg(
+            self, "No file selected"
+        )
+        return
     sheet = workbook.sheet_by_index(0)
     sheet.cell_value(0,0)
     for i in range(sheet.nrows):
@@ -36,16 +42,26 @@ def getText(label):
 def rename(self):
     filePath = getText(self.fileLabel)
     folderPath = getText(self.folderLabel)
+    filesInExcel = extractExcel(self,filePath)
+    if filesInExcel is None:
+        return
+        
+    try:
+        scanItr = os.scandir(folderPath)
+    except:
+        errorMssg(
+            self, "No folder selected"
+        )
+        return
+
     self.loadingLabel.setText("Loading..")
-    filesInExcel = extractExcel(filePath)
     filesChanged = False
-    
-    for entry in os.scandir(folderPath):
-        if entry.path.endswith(".pdf") and entry.is_file():
-            pdfNumber = extractNumber(entry.name)
+    for file in scanItr:
+        if file.path.endswith(".pdf") and file.is_file():
+            pdfNumber = extractNumber(file.name)
             if pdfNumber in filesInExcel and pdfNumber!=-1:
                 filesChanged = True
-                os.rename(entry.path,os.path.join(folderPath, filesInExcel[pdfNumber] + ".pdf"))
+                os.rename(file.path,os.path.join(folderPath, filesInExcel[pdfNumber] + ".pdf"))
                 
     if filesChanged:
         self.loadingLabel.setText("Files Renamed Successfully!!")
