@@ -50,7 +50,7 @@ def rename(self):
                     filesChanged = True
                     os.rename(filePath, newFilePath)
     if filesChanged:
-        setText(self.loadingLabel, str(filesCount) + " Files Renamed Successfully!!")
+        setText(self.loadingLabel, str(filesCount) + " File(s) Renamed Successfully!!")
     else:
         setText(self.loadingLabel, "No Files Changed")
 
