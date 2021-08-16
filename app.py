@@ -11,7 +11,8 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
         uic.loadUi("app.ui", self)
         self.setWindowIcon(QtGui.QIcon("logo.png"))
-
+        self.excelButton.setIcon(QtGui.QIcon("excel.png"))
+        self.pdfButton.setIcon(QtGui.QIcon("pdf2.jpg"))
         ct.connectFile(self, self.excelButton, self.fileLabel)
         ct.connectFolder(self, self.pdfButton, self.folderLabel)
         ct.connectRename(self, self.renameButton)
