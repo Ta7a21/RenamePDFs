@@ -10,7 +10,7 @@ class Ui(QtWidgets.QMainWindow):
         self.setWindowIcon(QtGui.QIcon("images/logo.png"))
         self.excelButton.setIcon(QtGui.QIcon("images/excel.png"))
         self.pdfButton.setIcon(QtGui.QIcon("images/pdf.png"))
-        self.renameButton.setIcon(QtGui.QIcon("images/icon1.png"))
+        self.renameButton.setIcon(QtGui.QIcon("images/rename.png"))
 
         ct.connectFile(self, self.excelButton, self.fileLabel)
         ct.connectFolder(self, self.pdfButton, self.folderLabel)

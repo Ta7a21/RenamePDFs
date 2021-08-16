@@ -25,12 +25,53 @@
      <widget class="QPushButton" name="excelButton">
       <property name="maximumSize">
        <size>
-        <width>150</width>
+        <width>256</width>
         <height>16777215</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Open Excel Sheet</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="folderLabel">
+      <property name="maximumSize">
+       <size>
+        <width>256</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>No Folder Selected</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="renameButton">
+      <property name="maximumSize">
+       <size>
+        <width>256</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Rename</string>
       </property>
      </widget>
     </item>
@@ -48,21 +89,13 @@
         <height>25</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>No File Selected</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QPushButton" name="renameButton">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Rename</string>
       </property>
      </widget>
     </item>
@@ -70,38 +103,35 @@
      <widget class="QPushButton" name="pdfButton">
       <property name="maximumSize">
        <size>
-        <width>150</width>
+        <width>256</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Open PDF Folder</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="pre.qrc">:/newPrefix/icon1.png</pixmap>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5" alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="folderLabel">
+    <item row="4" column="4" alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="loadingLabel">
       <property name="maximumSize">
        <size>
         <width>256</width>
         <height>25</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>No Folder Selected</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -113,7 +143,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
