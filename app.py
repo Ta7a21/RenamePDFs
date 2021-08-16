@@ -1,18 +1,17 @@
 from PyQt5 import QtWidgets, uic, QtGui
-from PyQt5.QtCore import QSettings
-import functions as tools
 import connects as ct
 import sys
-import os
 
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi("app.ui", self)
-        self.setWindowIcon(QtGui.QIcon("logo.png"))
-        self.excelButton.setIcon(QtGui.QIcon("excel.png"))
-        self.pdfButton.setIcon(QtGui.QIcon("pdf2.jpg"))
+        self.setWindowIcon(QtGui.QIcon("images/logo.png"))
+        self.excelButton.setIcon(QtGui.QIcon("images/excel.png"))
+        self.pdfButton.setIcon(QtGui.QIcon("images/pdf.png"))
+        self.renameButton.setIcon(QtGui.QIcon("images/icon1.png"))
+
         ct.connectFile(self, self.excelButton, self.fileLabel)
         ct.connectFolder(self, self.pdfButton, self.folderLabel)
         ct.connectRename(self, self.renameButton)
