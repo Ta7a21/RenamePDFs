@@ -69,7 +69,7 @@ def extractExcel(self, path):
     sheet = workbook.sheet_by_index(0)
     sheet.cell_value(0, 0)
     for i in range(sheet.nrows):
-        files[extractNumber(sheet.cell_value(i, 0))] = sheet.cell_value(i, 0)
+        files[extractNumber(str(sheet.cell_value(i, 0)))] = sheet.cell_value(i, 0)
 
     return files
 
